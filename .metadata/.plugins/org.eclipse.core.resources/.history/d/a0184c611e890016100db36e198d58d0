@@ -3,16 +3,16 @@ import users.Student;
 
 public class Queue{
 	
+	//Class classNum or classID
 	ArrayList<Student> queue;
 	int avgTimeWithStudents;
 	boolean open;
-	ArrayList<Student> lastFive;
 	
 	public Queue(){
+		
 		queue = new ArrayList<Student>();
 		avgTimeWithStudents=0;
 		open=false;
-		lastFive = new ArrayList<Student>();
 	}
 	
 	public int getLength(){
@@ -37,25 +37,11 @@ public class Queue{
 	}
 	
 	public void closeQueue(){
-		if(open==true) {
-			queue = new ArrayList<Student>();
-			open=false;
-		}
+		if(open==true) open=false;
 		else System.out.println("Queue is already closed!");
 	}
 	
 	public void addStudent(Student student){
-		if(queue.contains(student) == false) queue.add(student);
 		
-		if(lastFive.size()<5) lastFive.add(student);
-		else{
-			lastFive.remove(0);
-			lastFive.add(student);
-		}
 	}
-	
-	public void deleteStudent(Student student){
-		if(queue.contains(student)) queue.remove(student);
-	}
-	
 }

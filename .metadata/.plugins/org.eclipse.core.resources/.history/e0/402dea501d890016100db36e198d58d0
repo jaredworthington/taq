@@ -7,7 +7,7 @@ This class creates a student in our system
 */
 
 
-public class Student{
+class Student{
 	
 	String name;
 	String student_Login;

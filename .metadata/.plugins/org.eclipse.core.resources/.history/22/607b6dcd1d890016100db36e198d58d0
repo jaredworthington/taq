@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+import users.Student;
+
+public class Queue{
+	
+	ArrayList<Student> queue;
+	int avgTimeWithStudents;
+	boolean open;
+	
+	public Queue(){
+		queue = new ArrayList<Student>();
+		avgTimeWithStudents=0;
+		open=false;
+	}
+	
+	public int getLength(){
+		return queue.size();
+	}
+	
+	
+}
