@@ -21,7 +21,7 @@ public class Student{
 
 
 
-	Student(String studentFirstName, String studentLastName, String netID, String studentLogin, String studentPassword){
+	public Student(String studentFirstName, String studentLastName, String netID, String studentPassword){
 		name = studentFirstName + " " + studentLastName;
 		student_Login = netID;
 		student_Password = studentPassword;

@@ -44,6 +44,10 @@ public class Queue{
 		else System.out.println("Queue is already closed!");
 	}
 	
+	public Student getStudent(int i){
+		return queue.get(i);
+	}
+	
 	public void addStudent(Student student){
 		if(queue.contains(student) == false) queue.add(student);
 		
