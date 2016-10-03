@@ -1,0 +1,13 @@
+body{
+	margin:0
+}
+#signInModalHeader{
+	text-align:center;
+}
+#iAmModalHeader{
+	text-align:center;
+}
+
+#taqLogo{
+	background-image: url("../images/taqLogo.jpg");
+	}

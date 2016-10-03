@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html ng-app="TaqApp">
+<head>
+</head>
+<body>
+    <div ng-controller="SignInController" id="signInWindow">
+
+        <div id="header">
+            <img id="taqLogoHeader" src="images/taqLogo.jpg" alt="TAQ logo">
+        </div>
+
+        <div ng-init="signIn()">
+            <script type="text/ng-template" id="signIn">
+                <div ng-controller="TabController as tab">
+                    <div id="imageContainer">
+                        <img id="taqLogo" src="images/taqLogo.jpg" alt="TAQ logo">
+                    </div>
+                    <div id="signInModalHeader"> 
+                        <h1>
+                        Sign-in 
+                        </h1>
+                    </div>
+                    <div id="navigation">
+                        <ul class="nav nav-pills" active="activePill">
+                          <li class="nav-item" ng-class="{ active: tab.getTab() == 1 }"><a ng-click="tab.setTab(1)">Student</a></li>
+                          <li class="nav-item" ng-class="{ active: tab.getTab() == 2 }"><a ng-click="tab.setTab(2)">TA</a></li>
+                          <li class="nav-item" ng-class="{ active: tab.getTab() == 3 }"><a ng-click="tab.setTab(3)">Teacher</a></li> 
+                          <li class="nav-item" ng-class="{ active: tab.getTab() == 4 }"><a ng-click="tab.setTab(4)">Register</a></li>
+                        </ul>
+                    </div> 
+                    <div class="loginInfo row" ng-show="tab.getTab() === 1">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <label for="studentEmail">Email Address</label>
+                            <input type="email" class="form-control" id="studentEmail" aria-describedby="emailHelp" placeholder=".edu address">
+                            <label for="studentPassword">Password</label>
+                            <input type="password" class="form-control" id="studentPassword" placeholder="Password">
+                            <butto href="#student" ng-click="studentSignIn()" class="btn btn-primary blue">Submit</button>
+                        </div>
+                    </div>
+                    <div class="loginInfo row" ng-show="tab.getTab() === 2">
+                        <form>
+                            <div class="col-lg-8 col-lg-offset-2">
+                                <label for="taEmail">Email Address</label>
+                                <input type="email" class="form-control" id="taEmail" aria-describedby="emailHelp" placeholder=".edu address">
+                                <label for="taPassword">Password</label>
+                                <input type="password" class="form-control" id="taPassword" placeholder="Password">
+                                <button type="submit" ng-click="taSignIn()" class="btn btn-primary blue">Submit</button>
+                            </div>
+                        <form>
+                    </div>
+                    <div class="loginInfo row" ng-show="tab.getTab() === 3">
+                        <form>
+                            <div class="col-lg-8 col-lg-offset-2">
+                                <label for="teacherEmail">Email Address</label>
+                                <input type="email" class="form-control" id="teacherEmail" aria-describedby="emailHelp" placeholder=".edu address">
+                                <label for="teacherPassword">Password</label>
+                                <input type="password" class="form-control" id="teacherPassword" placeholder="Password">
+                                <button type="submit" ng-click="teacherSignIn()" class="btn btn-primary blue">Submit</button>
+                            </div>
+                        <form>
+                    </div>
+                    <div class="loginInfo row" ng-show="tab.getTab() === 4">
+                        <form>
+                            <div class="col-lg-8 col-lg-offset-2">
+                                <label for="signUpType"> Choose your role</label>
+                                <select class="form-control">
+                                  <option>Student</option>
+                                  <option>TA</option>
+                                  <option>Teacher</option>
+                                </select>
+                                <label for="teacherEmail">Email Address</label>
+                                <input type="email" class="form-control" id="teacherEmail" aria-describedby="emailHelp" placeholder=".edu address">
+                                <label for="teacherPassword">Password</label>
+                                <input type="password" class="form-control" id="teacherPassword" placeholder="Password">
+                                <button type="submit" class="btn btn-primary blue">Register</button>
+                            </div>
+                        <form>
+                    </div>
+                </div>
+            </script>
+    </div>  
+
+      <div id="main">
+  
+    <!-- angular templating -->
+        <!-- this is where content will be injected -->
+    <div ng-view></div>
+    
+  </div>
+  <div>
+  </div>
+
+    <script type="text/javascript" src="libs/JSBridge.js"></script>
+    <script type="text/javascript" src="libs/angular.js"></script>
+    <script type="text/javascript" src="scripts/taqApp.js"></script>
+    <script src="libs/ui-bootstrap-tpls-2.0.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="libs/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="styles/taqApp.css" />
+    <link rel="stylesheet" type="text/css" href="styles/font-awesome/css/font-awesome.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+</body>
+</html>

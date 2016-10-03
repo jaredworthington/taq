@@ -1,0 +1,52 @@
+body{
+	margin:0
+}
+#signInModalHeader{
+	text-align:center;
+}
+#iAmModalHeader{
+	text-align:center;
+}
+
+
+#navigation{
+	margin-left: 25%;
+	margin-right:25%;
+}
+
+.loginInfo{
+	margin-bottom: 10px;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover{
+    background-color: #002248;
+}
+
+.blue{
+	margin-top: 2%;
+	margin-left:40%;
+	background-color: #002248;
+}
+
+#taqLogo{
+	width: 30%;
+    height: auto;
+    border-radius: 10px;
+    text-align: center;
+}
+#taqLogoHeader{
+	width:145px;
+	height:auto;
+}
+#imageContainer{
+	text-align: center;
+	margin-top: 2%;
+}
+#header{
+	background-color:#002248;
+	height: 20%;
+}
+.navButtons{
+	margin-left: 91%;
+    background-color: white;
+}
