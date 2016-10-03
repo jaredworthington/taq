@@ -1,0 +1,29 @@
+
+import java.util.Date;
+//import java.util.Time;
+//import java.lang.enum<DayOfWeek>;
+//import java.time.DayOfWeek;
+import java.util.Calendar;
+
+public class OfficeHour {
+	private int IDNum;
+	private int dayOfWeek;
+	private int startTime;
+	
+	public OfficeHour(){
+		Calendar theDate = new Calendar();
+		dayOfWeek = theDate.getDay();
+	}
+	
+	public int getDayOfWeek(){
+		return dayOfWeek;
+	}
+	
+	public static void main (String [] args){
+		OfficeHour thisOne = new OfficeHour();
+		System.out.println(thisOne.getDayOfWeek());
+	}
+}
+
+
+
