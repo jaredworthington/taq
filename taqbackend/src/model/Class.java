@@ -1,5 +1,7 @@
+package model;
+
 import java.util.*;
-import users.*;
+import model.users.*;
 
 public class Class {
 

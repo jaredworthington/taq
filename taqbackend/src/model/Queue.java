@@ -1,5 +1,7 @@
+package model;
+
 import java.util.ArrayList;
-import users.Student;
+import model.users.*;
 
 public class Queue{
 	

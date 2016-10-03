@@ -1,6 +1,8 @@
-import java.util.ArrayList;
+package model;
 
-import users.Student;
+
+import java.util.ArrayList;
+import model.users.Student;
 
 
 public class Run {

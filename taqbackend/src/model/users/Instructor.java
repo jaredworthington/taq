@@ -1,4 +1,7 @@
-package users;
+package model.users;
+
+
+
 
 public class Instructor {
 	
@@ -15,6 +18,7 @@ public class Instructor {
 	public void changePassword(String newPassword){
 		password = newPassword;
 	}
+	
 	
 	
 }
