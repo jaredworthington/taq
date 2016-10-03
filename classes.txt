@@ -1,0 +1,71 @@
+CS 436 Project
+
+
+
+Objects:
+
+Class
+	Instance variables
+- String Name 
+- List of Students
+-  List <OfficeHour> OfficeHours
+-  Active Queue StudentQueue
+- Past Queue
+- Notes (File?)
+
+	Functions
+- Getters/Setters
+- StartQueue
+- Write to notes
+- Add Office hours
+- remove office hours
+- Add student
+
+OfficeHour
+	InstanceVariables
+- ID #
+- Day
+- TimeStart
+- TimeEnd
+- AvgNumberOfStudents
+- List <TA>
+
+	Functions
+- Getters/Setters
+- Add TA
+
+Section Leader
+	Instance Variables
+- Name
+- NetID
+- Password
+	
+	Functions
+- Change Password
+
+Queue
+	Instance Variables
+- List Student
+- int AvgTimeWithStudents
+- Boolean Open
+- int length
+
+	Functions
+- Getters/Setters
+- Push student to queue
+- Pop Student from queue
+- Remove student from queue
+- Calulate AvgTime
+
+
+
+Student
+	Instance Variables
+- Name
+- netID
+- password
+- times entering queue
+- times exiting queue
+- number of noShows
+- CurrentWaitTime
+- Number in Queue
