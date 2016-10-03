@@ -50,16 +50,20 @@ public class Queue{
 	
 	public void addStudent(Student student){
 		if(queue.contains(student) == false) queue.add(student);
-		
-		if(lastFive.size()<5) lastFive.add(student);
-		else{
-			lastFive.remove(0);
-			lastFive.add(student);
-		}
 	}
 	
 	public void deleteStudent(Student student){
-		if(queue.contains(student)) queue.remove(student);
+		if(queue.contains(student)){
+			queue.remove(student);
+			if(queue.indexOf(student)==0){
+				if(lastFive.size()<5) lastFive.add(student);
+				else{
+					lastFive.remove(0);
+					lastFive.add(student);
+				}
+			}
+		}
+		
 	}
 	
 }
