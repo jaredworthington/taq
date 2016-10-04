@@ -1,7 +1,8 @@
 package model;
 
-import java.util.ArrayList;
+import java.util.*;
 import model.users.*;
+
 
 public class Queue{
 	
@@ -9,12 +10,20 @@ public class Queue{
 	int avgTimeWithStudents;
 	boolean open;
 	ArrayList<Student> lastFive;
+	ArrayList<Integer> timesWithStudents;
 	
 	public Queue(){
 		queue = new ArrayList<Student>();
 		avgTimeWithStudents=0;
 		open=false;
 		lastFive = new ArrayList<Student>();
+	}
+	
+	public void updateQueueTimes(){
+		for(int i=0; i<queue.size(); i++){
+			Student s = queue.get(i);
+			s.setCurrentWaitTime((i+1)*avgTimeWithStudents);
+		}
 	}
 	
 	public int getLength(){
@@ -51,13 +60,39 @@ public class Queue{
 	}
 	
 	public void addStudent(Student student){
-		if(queue.contains(student) == false) queue.add(student);
+		if(queue.contains(student) == false){
+			queue.add(student);
+			student.increment_Times_In_Queue();
+			student.setDate(new Date());
+		}
+	}
+	
+	public void updateAvgTimeWithStudents(){
+		int t=0;
+		for(int i=0; i<timesWithStudents.size(); i++){
+			t=t+timesWithStudents.get(i);
+		}
+		avgTimeWithStudents = (int) (t / (timesWithStudents.size())); //time in seconds
 	}
 	
 	public void deleteStudent(Student student){
 		if(queue.contains(student)){
 			queue.remove(student);
 			if(queue.indexOf(student)==0){
+				student.increment_Times_Exiting_Queue();
+				Date exitDate = new Date();
+				int seconds = (int) (exitDate.getTime()- student.getTimeEnteringQueue().getTime())/1000;
+				
+				if(timesWithStudents.size()<25){
+					timesWithStudents.add(seconds);
+				}
+				else{
+					timesWithStudents.remove(0);
+					timesWithStudents.add(seconds);
+				}
+				
+				updateAvgTimeWithStudents();
+				
 				if(lastFive.size()<5) lastFive.add(student);
 				else{
 					lastFive.remove(0);

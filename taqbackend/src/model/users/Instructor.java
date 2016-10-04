@@ -1,8 +1,6 @@
 package model.users;
 
 
-
-
 public class Instructor {
 	
 	private String name;
@@ -19,7 +17,17 @@ public class Instructor {
 		password = newPassword;
 	}
 	
+	public String getPassword(){
+		return password;
+	}
 	
+	public String getName(){
+		return name;
+	}
 	
+	public String getNetID(){
+		return netID;
+	}
+		
 }
 

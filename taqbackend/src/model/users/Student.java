@@ -1,4 +1,5 @@
 package model.users;
+import java.util.Date;
 /*
 Student.java 
 
@@ -14,6 +15,7 @@ public class Student{
 	String student_Password;
 	int total_Times_In_Queue;
 	int total_Times_Exiting_Queue;
+	Date timeEnteringQueue;
 	int num_No_Shows;
 	int current_Wait_Time;
 	int number_In_Queue;
@@ -30,9 +32,20 @@ public class Student{
 		num_No_Shows = 0;
 		current_Wait_Time = 0;
 		number_In_Queue = 0;
+		timeEnteringQueue = null;
+	}
+	
+	public void setDate(Date d){
+		timeEnteringQueue = d;
 	}
 
-
+	public void setCurrentWaitTime(int i){
+		current_Wait_Time = i;
+	}
+	
+	public Date getTimeEnteringQueue(){
+		return timeEnteringQueue;
+	}
 	
 	public void increment_Times_Exiting_Queue(){
 		total_Times_Exiting_Queue = total_Times_Exiting_Queue +1;

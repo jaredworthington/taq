@@ -31,7 +31,6 @@ public class Class {
 	 classList.add(s);
  }
  
- 
 
  //Getters & Setters
  
